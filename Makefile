@@ -628,8 +628,10 @@ ifdef RELEASETOOLS
 	@echo Package OTAPACKAGE: $(OTA_TARGET_PACKAGE)
 	@rm -rf $(TARGET_OUT)/otapackage
 	@mkdir -p $(TARGET_OUT)/otapackage/system
+	@mkdir -p $(TARGET_OUT)/otapackage/data
 	@mkdir -p $(TARGET_OUT)/otapackage/META-INF/com/google/android
 	@cp -R $(TARGET_OUT)/system/* $(TARGET_OUT)/otapackage/system/
+	@cp -R $(TARGET_OUT)/data/* $(TARGET_OUT)/otapackage/data/
 	@cp $(GONK_PATH)/$(RELEASETOOLS)/update-binary $(TARGET_OUT)/otapackage/META-INF/com/google/android/update-binary
 	@cp $(GONK_PATH)/$(RELEASETOOLS)/updater-script $(TARGET_OUT)/otapackage/META-INF/com/google/android/updater-script
 	@echo Zipping package...
